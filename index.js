@@ -5,13 +5,13 @@ function getDogPhotos() {
   fetch(dogUrl)
   .then(response => response.json())
   .then(function(responseJson) {
-    console.log(responseJson)
-    displayDogs(responseJson)
+    console.log(responseJson);
+    displayDogs(responseJson);
   }
   )
 }
-function getNumberOfDoges() {
-  $('#submit-button').click(function(event){
+function handleSubmit() {
+  $('form').submit(function(event){
     event.preventDefault();
     userNum = $('#dog-number').val();
     getDogPhotos();
@@ -27,4 +27,4 @@ function displayDogs(response) {
   };
   
 }
-$(getNumberOfDoges);
+$(handleSubmit);
